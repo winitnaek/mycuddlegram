@@ -8,18 +8,20 @@
 		//Alternate to this function as below:
 	}); */
     $(function() {
+    	$("#username").focus();
 		$("#add_err").css('display', 'none', 'important');
 		$("#login").click(function() {
 			username = $("#username").val();
 			password = $("#password").val();
 			$.ajax({
 				type : "POST",
-				url : "logintest.html",
+				url : "/login",
 				data : "username=" + username + "&password=" + password,
 				success : function(data) {
+					alert(data);
 					$("#add_err").css('display', 'none', 'important');
 					$("#container").css('display', 'none', 'important');
-					location.href="ajax";
+					location.href="/admin";
 				},
 				beforeSend : function() {
 					$("#add_err").css('display', 'inline', 'important');

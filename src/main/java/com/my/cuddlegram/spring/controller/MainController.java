@@ -30,7 +30,7 @@ public class MainController {
 
 	}
 
-	@RequestMapping(value = "/admin**", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public ModelAndView adminPage() {
 
 		ModelAndView model = new ModelAndView();
@@ -42,7 +42,7 @@ public class MainController {
 
 	}
 
-	/*@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(
 			@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
@@ -59,8 +59,8 @@ public class MainController {
 
 		return model;
 
-	}*/
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	}
+	/*@RequestMapping(value = "login", method = RequestMethod.POST)
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
 
@@ -76,7 +76,7 @@ public class MainController {
 
 		return model;
 
-	}
+	}*/
 	//customize the error message
 	private String getErrorMessage(HttpServletRequest request, String key){
 		Exception exception = (Exception) request.getSession().getAttribute(key);
